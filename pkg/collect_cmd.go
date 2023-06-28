@@ -99,9 +99,12 @@ func collectFunc(_ *cobra.Command, _ []string) error {
 		return fmt.Errorf("program not found: tanzu")
 	}
 
-	if gexe.Prog().Avail("docker") == "" {
-		return fmt.Errorf("progra not found: docker")
-	}
+	/*
+		adisky: commenting following code as docker is depedency only for bootstrap cluster
+		if gexe.Prog().Avail("docker") == "" {
+			return fmt.Errorf("program not found: docker")
+		}
+	*/
 
 	if commonArgs.workDir == "" {
 		log.Printf("workdir empty: setting it to %s", getDefaultWorkdir())

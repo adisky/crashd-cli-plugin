@@ -2,7 +2,6 @@ package main
 
 import (
 	"embed"
-	"log"
 	"os"
 
 	"github.com/vmware-tanzu/crashd-cli-plugin/pkg"
@@ -15,7 +14,7 @@ import (
 var descriptor = plugin.PluginDescriptor{
 	Name:        "diagnostics",
 	Description: "crashd plugin",
-	Target:      types.TargetUnknown, // <<<FIXME! set the Target of the plugin to one of {TargetGlobal,TargetK8s,TargetTMC}
+	Target:      types.TargetGlobal, // <<<FIXME! set the Target of the plugin to one of {TargetGlobal,TargetK8s,TargetTMC}
 	Version:     buildinfo.Version,
 	BuildSHA:    buildinfo.SHA,
 	Group:       plugin.RunCmdGroup, // set group
